@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Retrieve Recruit</h2>
+    <pre>
+            <form action="{% url 'rec_r' %}" method="post">
+        Field:    <select name="field">
+            <option selected>BookID</option>
+            <option>name</option>
+            <option>faculty</option>
+            <option>speciality</option>
+            <option>level</option>
+            </select><br>
+         ==       <input type="text" name="reqval"><br>
+        <input value="Find" type="submit">
+    {% csrf_token %}
+    </form>
+    </pre>
+{% endblock %}

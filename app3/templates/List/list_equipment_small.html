@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Оборудование</h2>
+<table>
+    {% for row in object_list %}
+    <tr>
+        <td>{{ row.name }}</td>
+        <td>{{ row.typ }}</td>
+        <td>{{ row.sn }}</td>
+        <td>{{ row.shipment }}</td>
+        <td>{{ row.place }}</td>
+        <td>{{ row.status }}</td>
+        <td align="middle">
+            <form action="{% url 'equipment' %}del/{{ row.pk }}" method="get">
+                <input value="Delete" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+        <td align="center">
+            <form action="{% url 'equipment' %}upd/{{ row.pk }}" method="get">
+                <input value="Edit" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+        <td align="center">
+                    <form action="{% url 'equipment' %}det/{{ row.pk }}" method="get">
+                        <input value="Detail" type="submit">
+                        {% csrf_token %}
+                    </form>
+                </td>
+
+    </tr>
+    {% endfor %}
+</table>
+<div align="middle">
+    <form action="{% url 'equipment_add' %}" method="get">
+        <input value="Add" type="submit">
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock %}

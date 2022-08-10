@@ -1,0 +1,52 @@
+div.navigate {
+    background-color: ivory;
+    font-family: courier;
+    color: lightbrown
+}
+div.content {
+    background-color: lightgray;
+    font-family: courier
+}
+div.subnavigate {
+    background-color: ivory;
+    font-family: courier
+}
+div.card {
+    background-color: ivory;
+    font-family: courier;
+    font-weight: bold
+}
+div.start {
+    background-image: url(/static/start_bg.jpg);
+    height: 450px;
+
+    font-family: courier;
+    font-color: white;
+    color: white;
+    text-align: center
+}
+form{
+    font-family: courier
+    }
+h1{
+    color: white;
+    align: center;
+    text-align: center;
+    font-family: courier
+}
+h2{
+    color: black;
+    text-align: center;
+    font-family: courier
+}
+table{
+border: none;
+width: 100%;
+font-weight: bold
+}
+table tbody tr:nth-child(odd){
+	background: ivory;
+}
+table tbody tr:nth-child(even){
+	background: #F7F7F7;
+}

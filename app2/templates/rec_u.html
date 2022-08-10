@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Update Recruit</h2>
+    <pre>
+        <form action="{% url 'rec_u' %}" method="post">
+        Book ID:   <input type="text" name="book"><br>
+        Field:     <select name="field">
+            <option selected>name</option>
+            <option>faculty</option>
+            <option>speciality</option>
+            <option>level</option>
+            </select><br>
+        NewValue:  <input type="text" name="newval"><br>
+        <input value="Update" type="submit">
+        {% csrf_token %}
+        </form>
+    </pre>
+
+{% endblock %}

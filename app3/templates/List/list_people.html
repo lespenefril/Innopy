@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Люди</h2>
+<table>
+    {% for row in object_list %}
+    <tr>
+        <td>{{ row.fio }}</td>
+        <td>{{ row.tel }}</td>
+        <td>{{ row.email }}</td>
+        <td>{{ row.partner }}</td>
+        <td>{{ row.comment }}</td>
+        <td align="middle">
+            <form action="{% url 'people' %}del/{{ row.pk }}" method="get">
+                <input value="Delete" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+        <td align="center">
+            <form action="{% url 'people' %}upd/{{ row.pk }}" method="get">
+                <input value="Edit" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+<div align="middle">
+    <form action="{% url 'people_add' %}" method="get">
+        <input value="Add" type="submit">
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock %}

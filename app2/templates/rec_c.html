@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <br><br>
+<h2>Create Recruit</h2>
+<pre>
+       <form action="{% url 'rec_c' %}" method="post">
+        Book ID:    <input type="text" name="book"><br>
+        Name:       <input type="text" name="name"><br>
+        Faculty:    <input type="text" size="3" name="fac"><br>
+        Speciality: <select name="spec">
+            <option selected>Speciality</option>
+            {% for spec in specs %}
+                <option> {{ spec.spec_code }} </option>
+            {% endfor %}
+            </select><br>
+        Level:      <input type="text" size="3" name="level"><br>
+        <input value="Create" type="submit">
+    {% csrf_token %}
+     </form>
+</pre>
+{% endblock %}

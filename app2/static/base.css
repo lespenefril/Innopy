@@ -1,0 +1,21 @@
+div.navigate {
+    background-color: ivory;
+    font-family: papyrus;
+    color: lightbrown
+}
+div.content {
+    background-color: lightgray;
+    font-family: courier
+}
+form{
+    font-family: courier
+}
+h1{
+    color: gray;
+    text-align: center;
+    font-family: "old english text mt"
+}
+table{
+border-width: 0;
+border-style: solid
+}

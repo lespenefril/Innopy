@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Поставки</h2>
+<table>
+    {% for row in object_list %}
+    <tr>
+        <td>{{ row.ship_id }}</td>
+        <td>{{ row.partner }}</td>
+        <td>{{ row.contact }}</td>
+        <td>{{ row.in_date }}</td>
+        <td>{{ row.out_date }}</td>
+        <td>
+            {% if row.ready %} Собрана
+            {% else %} Не собрана
+            {% endif %}
+        </td>
+        <td>{{ row.comment }}</td>
+        <td align="middle">
+            <form action="{% url 'shipments' %}del/{{ row.pk }}" method="get">
+                <input value="Delete" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+        <td align="center">
+            <form action="{% url 'shipments' %}upd/{{ row.pk }}" method="get">
+                <input value="Edit" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+<div align="middle">
+    <form action="{% url 'shipment_add' %}" method="get">
+        <input value="Add" type="submit">
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock %}

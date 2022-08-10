@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Delete Recruit</h2>
+    <pre>
+            <form action="{% url 'rec_d' %}" method="post">
+        Book ID:   <input type="text" name="book"><br>
+        <input value="Delete" type="submit">
+    {% csrf_token %}
+    </form>
+    </pre>
+
+{% endblock %}

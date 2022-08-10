@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br><br>
+    <table border="1">
+        {% for recruit in recruits %}
+        <tr>
+            <td width="20%">{{ recruit.book_id }}</td>
+            <td width="25%">{{ recruit.pad_nm }}</td>
+            <td nowrap width="30%">{{ recruit.fac_num }}</td>
+            <td width="15%">{{ recruit.spec_code }}</td>
+            <td width="10%">{{ recruit.lvl }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+OK
+{% endblock %}

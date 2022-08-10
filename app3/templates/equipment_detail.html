@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+<h2>Карточка оборудования</h2>
+<h2>{{ object.vendor }} {{ object.name }} (S/N: {{ object.sn }})</h2>
+
+
+<p>Класс: {{ object.typ }}</p>
+<p>Поставка: {{ object.shipment }}</p>
+<p>Ответственный: {{ object.responsible }}</p>
+<p>Находится в: {{ object.place }}</p>
+<p>Состояние {% if object.integrity %} Исправен {% else %} Не исправен {% endif %}</p>
+<p>Статус: {{ object.status }}</p>
+<p>ТТХ: {{ object.tech }}</p>
+<p>Примечания: {{ object.comment }}</p>
+</div>
+
+<table>
+    <tr>
+        <td align="right" bgcolor="lightgray" width="50%">
+            <form action="{% url 'equipment' %}upd/{{ object.pk }}" method="get">
+                <input value="Edit" type="submit">
+                {% csrf_token %}
+            </form>
+
+        </td>
+        <td align="left" bgcolor="lightgray">
+            <form action="{% url 'equipment' %}del/{{ object.pk }}" method="get">
+                <input value="Delete" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

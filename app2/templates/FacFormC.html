@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h2>Add Faculty</h2>
+    <pre>
+        <form action="{% url 'addfac' %}" method="post">
+        <p>Faculty  Name   <input type="text" name="fac_name"></p>
+        <p><input type="submit" value="Add"></p>
+        {% csrf_token %}
+        </form>
+
+    </pre>
+
+{% endblock %}
+

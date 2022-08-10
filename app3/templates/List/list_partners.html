@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Контрагенты</h2>
+<table>
+    {% for row in object_list %}
+    <tr>
+        <td width="80%">{{ row.partner }}</td>
+        <td width="10%">
+            <form action="{% url 'partners' %}del/{{ row.pk }}" method="get">
+                <input value="Delete" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+        <td width="10%">
+            <form action="{% url 'partners' %}upd/{{ row.pk }}" method="get">
+                <input value="Edit" type="submit">
+                {% csrf_token %}
+            </form>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+<div align="middle">
+    <form action="{% url 'partners_add' %}" method="get">
+        <input value="Add" type="submit">
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock %}

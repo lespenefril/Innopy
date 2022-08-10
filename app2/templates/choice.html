@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choice Point</title>
+</head>
+<body>
+<p>
+<h2>Show ALL Recruits</h2>
+    <form action="http://127.0.0.1:8000/show_all" method="get">
+        <input value="View All Reqruits" type="submit">
+    </form>
+</p>
+<p>
+<h2>Create Recruit</h2>
+    <pre>
+    <form action="http://127.0.0.1:8000/create_r" method="post">
+        Book ID:    <input type="text" name="book"><br>
+        Name:       <input type="text" name="name"><br>
+        Faculty:    <select name="fac">
+            <option selected>Faculty ID</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            </select><br>
+        Speciality: <select name="spec">
+            <option selected>Speciality</option>
+            <option>KТ</option>
+            <option>DR</option>
+            <option>DE</option>
+            <option>OL</option>
+            <option>HE</option>
+            <option>WL</option>
+            </select><br>
+        Level:      <input type="text" size="3" name="level"><br>
+        <input value="Create" type="submit">
+    </form>
+    </pre>
+</p>
+<p>
+<h2>Retrieve Recruit</h2>
+    <pre>
+            <form action="http://127.0.0.1:8000/read_r" method="post">
+        Field:    <select name="field">
+            <option selected>BookID</option>
+            <option>name</option>
+            <option>faculty</option>
+            <option>speciality</option>
+            <option>level</option>
+            </select><br>
+         ==       <input type="text" name="reqval"><br>
+        <input value="Find" type="submit">
+    </form>
+    </pre>
+</p>
+<p>
+<h2>Update Recruit</h2>
+    <pre>
+            <form action="http://127.0.0.1:8000/update_r" method="post">
+        Book ID:   <input type="text" name="book"><br>
+        Field:     <select name="field">
+            <option selected>name</option>
+            <option>faculty</option>
+            <option>speciality</option>
+            <option>level</option>
+            </select><br>
+        NewValue:  <input type="text" name="newval"><br>
+        <input value="Update" type="submit">
+    </form>
+    </pre>
+</p>
+<p>
+<h2>Delete Recruit</h2>
+    <pre>
+            <form action="http://127.0.0.1:8000/delete_r" method="post">
+        Book ID:   <input type="text" name="book"><br>
+        <input value="Delete" type="submit">
+    </form>
+    </pre>
+</p>
+</body>
+</html>
