@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'innopy',
         'USER': 'postgres',
-        'PASSWORD': 'skipped',
+        'PASSWORD': '',
         'HOST': 'localhost'
     }
 }
